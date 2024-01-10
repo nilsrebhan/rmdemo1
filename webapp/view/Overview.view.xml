@@ -1,0 +1,15 @@
+<mvc:View controllerName="rm.hcm.training.ztimeevents.controller.Overview" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<App id="app">
+		<pages>
+			<Page id="page" title="{i18n>title}">
+				<content>
+					<VBox class="sapUiResponsiveMargin">
+						<core:Fragment fragmentName="rm.hcm.training.ztimeevents.fragments.List" type="XML"/>
+						<core:Fragment fragmentName="rm.hcm.training.ztimeevents.fragments.Table" type="XML"/>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

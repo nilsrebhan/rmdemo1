@@ -1,0 +1,30 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="rm.hcm.training.ztimeevents.controller.Create" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Zeitereignis anlegen">
+		<content>
+			<VBox>
+				<core:Fragment fragmentName="rm.hcm.training.ztimeevents.fragments.List" type="XML"/>
+				<f:SimpleForm id="idFormCreate" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+					adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+					singleContainerFullSize="false">
+					<f:content>
+						<Label text="Personalnummer"/>
+						<Input id="pernr" value="81017777" editable="false"/>
+						<Label text="Kommen / Gehen"/>
+						<Select id="idTimeType" items="{/TimeEventTypeSet}">
+							<items>
+								<core:Item text="{TimeTypeText}" key="{TimeType}"/>
+							</items>
+						</Select>
+						<Label text="Datum"/>
+						<DatePicker id="idEventDate"/>
+						<Label text="Zeitpunkt"/>
+						<TimePicker id="idEventTime"/>
+						<Label text=" "/>
+						<Button press="onSave" text="Speichern"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

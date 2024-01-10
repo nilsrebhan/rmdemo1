@@ -1,0 +1,48 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Table id="idTabTimeEvents" items="{ path : '/TimeEventSet',templateShareable:true}" growing="true" growingThreshold="10" mode="Delete"
+		delete="onDelete">
+		<headerToolbar>
+			<Toolbar>
+				<content>
+					<Title text="Zeitereignisse"/>
+					<ToolbarSpacer/>
+					<DatePicker id="idDPForm" change="onFilter" width="15rem"/>
+					<Button icon="sap-icon://edit" press="onEdit"/>
+					<Button icon="sap-icon://add" press="onCreate"/>
+					<Button icon="sap-icon://save" press="onSave"/>
+				</content>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="Personalnummer"/>
+			</Column>
+			<Column>
+				<Text text="Typ"/>
+			</Column>
+			<Column>
+				<Text text="Date"/>
+			</Column>
+			<Column>
+				<Text text="Stunden"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem >
+				<cells>
+					<Text text="{Pernr}"/>
+					<!--<Text text="{TimeTypeText}"/>-->
+					<Select items="{/TimeEventTypeSet}" selectedKey="{TimeType}">
+						<items>
+							<core:Item text="{TimeTypeText}" key="{TimeType}"/>
+						</items>
+					</Select>
+					<!--<Text text="{path: 'EventDate', type: 'sap.ui.model.type.Date', formatOptions: { style: 'short', pattern: 'dd.MM.yyyy' } }"/>-->
+					<DatePicker dateValue="{EventDate}"/>
+					<Text text="{path: 'EventTime' ,formatter: '.formatTime' }"/>
+					<!--<TimePicker valueFormat="HH:mm" displayFormat="HH:mm" dateValue="{EventTime}"/>-->
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>
