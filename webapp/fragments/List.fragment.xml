@@ -3,6 +3,7 @@
 		<items>
 			<StandardListItem title="Test 1"/>
 			<StandardListItem title="Test 2"/>
+			<StandardListItem title="Test 3"/>
 		</items>
 	</List>
 </core:FragmentDefinition>
